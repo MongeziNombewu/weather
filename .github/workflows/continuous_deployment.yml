@@ -3,13 +3,11 @@ name: CD
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ] # for testing
 
   workflow_dispatch:
 
 jobs:
-  verify:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
