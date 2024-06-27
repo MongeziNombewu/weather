@@ -1,7 +1,7 @@
 # Weather App
 
 A simple weather app intended to provide the user with weather forecast information for the next 5 days. The app is
-built using the OpenWeatherMap API to get forecast information.
+built using the Open Weather API to get forecast information.
 
 ## Architecture
 
@@ -45,27 +45,29 @@ _Utility_
 - **Timber**: Used for logging.
 - **Kotlin Coroutines**: Used to handle asynchronous operations.
 - **LeakCanary**: Used to detect memory leaks.
-- **Firebase Crashlytics**: Used to track crashes in production.
+- **Firebase Crashlytics**: Used to track app crashes.
 - **Firebase App Distribution**: Used to distribute the app to testers.
 
-  _User Interface_
+_User Interface_
+
 - **Jetpack Compose**: Used to build the UI.
 - **Accompanist**: Used to request permissions in Compose.
 - **Material3**: Used to style the app.
 - **Play Services Location**: Used to get the user's location.
 
-  _Unit Testing_
+_Unit Testing_
+
 - **JUnit**: Used for unit testing.
 - **Mockito**: Used for mocking objects in tests.
 
-## CD/CI
+## CI/CD
 
 The project uses GitHub Actions for CI/CD. The CI workflow runs the unit tests and code quality checks on every push
 and pull request. The CD workflow builds the app and distributes it to testers using Firebase App Distribution.
 
 ### Considerations
 
-**Dependabot** has been integrated into teh project to keep the dependencies up to date.
+**Dependabot** has been integrated into the project to keep the dependencies up to date.
 
 The sensitive information such as the API key is stored in a `secrets.properties` file that is not checked into GitHub.
 In addition, the sonarcloud, Google Cloud service account and Firebase project are stored discreetly as **GitHub secret
