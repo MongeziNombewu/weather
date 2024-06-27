@@ -4,6 +4,9 @@ plugins {
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
     jacoco
     alias(libs.plugins.sonar)
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.firebase.crashlytics)
+    alias(libs.plugins.firebase.appdistribution)
 }
 
 android {
@@ -30,6 +33,12 @@ android {
         }
         debug {
             enableUnitTestCoverage = true
+            firebaseAppDistribution {
+                artifactType = "APK"
+                groups = "internal-testers"
+                serviceCredentialsFile = "${project.rootDir}/app/weather-service-account.json"
+            }
+
         }
     }
     kotlin {
@@ -67,6 +76,9 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.crashlytics)
     implementation(libs.bundles.retrofit)
     implementation(libs.logging.interceptor)
     implementation(libs.moshi.kotlin)
