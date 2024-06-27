@@ -1,11 +1,13 @@
-name: CI
+name: CD
 
 on:
-  pull_request:
+  push:
     branches: [ "main" ]
 
+  workflow_dispatch:
+
 jobs:
-  verify:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -33,19 +35,16 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
 
-      - name: Decode google-services.json
+      - name: Decode service json files
         run: |
           echo "${{ secrets.GOOGLE_SERVICES }}" | base64 --decode > app/google-services.json
-
-      - name: Run lint verification
-        run: ./gradlew lintDebug
-
-      - name: Run debug unit tests
-        run: ./gradlew testDebugUnitTest
+          echo "${{ secrets.FIREBASE_APP_DISTRIBUTION }}" | base64 --decode > app/weather-service-account.json
 
       - name: Analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew codeCoverage sonar
+        run: ./gradlew sonar
 
+      - name: Upload APK to Firebase App Distribution
+        run: ./gradlew assembleDebug appDistributionUploadDebug
