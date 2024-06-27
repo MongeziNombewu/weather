@@ -80,6 +80,9 @@ A **pull request template** has been added to the project to ensure that all pul
 steps.
 This is to ensure that the reviewer has all the information needed to review the code.
 
+Rules have been added to the repo to protect the main branch. This includes requiring pull requests to be reviewed, and
+passing the CI checks before merging.
+
 ## Installation
 
 The app can be installed by downloading the APK from Firebase App Distribution. The app is distributed to testers
