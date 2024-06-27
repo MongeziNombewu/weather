@@ -1,6 +1,7 @@
 package com.weather.android
 
 import android.app.Application
+import com.weather.android.analytics.di.analyticsModule
 import com.weather.android.forecast.di.forecastModule
 import com.weather.android.location.di.locationModule
 import com.weather.android.ui.di.appModule
@@ -20,7 +21,7 @@ class WeatherApp : Application() {
         startKoin {
             androidLogger()
             androidContext(this@WeatherApp)
-            modules(appModule, forecastModule, locationModule)
+            modules(appModule, forecastModule, locationModule, analyticsModule)
         }
     }
 }

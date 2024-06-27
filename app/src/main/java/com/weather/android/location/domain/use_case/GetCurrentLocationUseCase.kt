@@ -1,4 +1,4 @@
-package com.weather.android.location.domain
+package com.weather.android.location.domain.use_case
 
 import com.weather.android.location.data.LocationRepository
 
