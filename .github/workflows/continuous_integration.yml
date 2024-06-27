@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run lint verification
+        run: ./gradlew lintDebug
+
+      - name: Run debug unit tests
+        run: ./gradlew testDebugUnitTest
+
+      - name: Run JaCoCo code coverage
+        run: ./gradlew codeCoverage
+
