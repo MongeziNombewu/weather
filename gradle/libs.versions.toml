@@ -20,6 +20,7 @@ moshiKotlin = "1.15.1"
 playServicesLocation = "21.3.0"
 retrofit = "2.11.0"
 secretsGradlePlugin = "2.0.1"
+sonar = "5.0.0.4638"
 timber = "5.0.1"
 
 [libraries]
@@ -70,4 +71,4 @@ retrofit = ["converter-moshi", "retrofit"]
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-
+sonar = { id = "org.sonarqube", version.ref = "sonar" }

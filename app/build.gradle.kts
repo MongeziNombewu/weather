@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
     jacoco
-    id("org.sonarqube") version "5.0.0.4638"
+    alias(libs.plugins.sonar)
 }
 
 android {
