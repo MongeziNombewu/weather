@@ -3,6 +3,7 @@ package com.weather.android.location.domain
 import com.weather.android.common.error.WeatherError
 import com.weather.android.forecast.domain.model.Coord
 import com.weather.android.location.data.LocationRepository
+import com.weather.android.location.domain.use_case.GetCurrentLocationUseCase
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Before

@@ -6,7 +6,7 @@ import com.weather.android.location.data.LocationDatasource
 import com.weather.android.location.data.LocationRepository
 import com.weather.android.location.data.remote.GoogleLocationDatasource
 import com.weather.android.location.data.remote.GoogleLocationRepository
-import com.weather.android.location.domain.GetCurrentLocationUseCase
+import com.weather.android.location.domain.use_case.GetCurrentLocationUseCase
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
