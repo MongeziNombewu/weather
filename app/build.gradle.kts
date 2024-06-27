@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
     jacoco
+    alias(libs.plugins.sonar)
 }
 
 android {
@@ -96,3 +97,11 @@ secrets {
 }
 
 apply { from("../jacoco.gradle.kts") }
+
+sonar {
+    properties {
+        property("sonar.projectKey", "MongeziNombewu_weather")
+        property("sonar.organization", "mongezinombewu")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
+}
