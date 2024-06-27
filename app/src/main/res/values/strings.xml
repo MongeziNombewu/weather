@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Weather</string>
+    <string name="temperature">%s°</string>
+    <string name="temperature_min_label">min</string>
+    <string name="temperature_current_label">current</string>
+    <string name="temperature_max_label">max</string>
+    <string name="location_permission_rational">Getting your approximate location is important for this app. Please grant us access to your location. Danko! :D</string>
+    <string name="location_permission">This feature requires location permission</string>
+    <string name="get_user_location">Get my location</string>
+    <string name="error_internet_connection">Network error occurred. Please check your internet connection and try again.</string>
+    <string name="error_location_settings">Location error occurred. Please check your location settings and try again.</string>
+    <string name="error_unknown">An unknown error occurred. Please try again.</string>
+    <string name="retry">Retry</string>
 </resources>
